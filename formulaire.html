@@ -1,0 +1,200 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MeetMyStats</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="css/Features-Boxed.css">
+    <link rel="stylesheet" href="css/Footer-Clean.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css">
+    <link rel="stylesheet" href="css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="css/Pretty-Footer.css">
+    <link rel="stylesheet" href="css/Pretty-Search-Form.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/Team-Boxed.css">
+</head>
+
+<body>
+    <section>
+        <div id="hero-top">
+
+            <!-- NAVBAR -->
+            <nav class="navbar navbar-light navbar-expand-md">
+                <div class="container-fluid"><a class="navbar-brand" href="formulaire.html" data-bs-hover-animate="swing">MeetMyNews</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav mr-auto">
+
+                            <!-- Actualité -->
+                            <li class="nav-item dropdown">
+                                <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Actualité</a>
+                                <div class="dropdown-menu" role="menu">
+                                    <a class="dropdown-item" role="presentation" onclick="afficherArticlesParCategorie('business')" href="#">Business</a>
+                                    <a class="dropdown-item" role="presentation" onclick="afficherArticlesParCategorie('health')" href="#">Santé</a>
+                                    <a class="dropdown-item" role="presentation" onclick="afficherArticlesParCategorie('science')" href="#">Science</a>
+                                    <a class="dropdown-item" role="presentation" onclick="afficherArticlesParCategorie('sports')" href="#">Sports</a>
+                                    <a class="dropdown-item" role="presentation" onclick="afficherArticlesParCategorie('technology')" href="#">Technologie</a>
+                                </div>
+                            </li>
+
+                            <!-- Pays -->
+                            <li class="nav-item dropdown">
+                                <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Pays</a>
+                                <div class="dropdown-menu" role="menu">
+                                    <a class="dropdown-item" role="presentation" onclick="afficherArticlesParPays('fr')" href="#">France</a>
+                                    <a class="dropdown-item" role="presentation" onclick="afficherArticlesParPays('gb')" href="#">Angleterre</a>
+                                    <a class="dropdown-item" role="presentation" onclick="afficherArticlesParPays('ar')" href="#">Argentine</a>
+                                    <a class="dropdown-item" role="presentation" onclick="afficherArticlesParPays('br')" href="#">Brésil</a>
+                                    <a class="dropdown-item" role="presentation" onclick="afficherArticlesParPays('jp')" href="#">Japon</a>
+                                    <a class="dropdown-item" role="presentation" onclick="afficherArticlesParPays('pt')" href="#">Portugal</a>
+                                    <a class="dropdown-item" role="presentation" onclick="afficherArticlesParPays('ru')" href="#">Russie</a>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <!-- Partie droite du menu -->
+                        <ul class="nav navbar-nav ml-auto">
+
+                          <!-- Langues -->
+                          <li class="nav-item dropdown">
+                              <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" id="idLangue" href="#" value="fr">Français</a>
+                              <div class="dropdown-menu" role="menu">
+                                  <a class="dropdown-item" role="presentation" onclick="choisirLangue('fr')" href="#">Français</a>
+                                  <a class="dropdown-item" role="presentation" onclick="choisirLangue('en')" href="#">English</a>
+                                  <a class="dropdown-item" role="presentation" onclick="choisirLangue('es')" href="#">Español</a>
+                              </div>
+                          </li>
+
+                          <!-- Formulaire de recherche -->
+                          <form class="form-inline my-2 my-lg-0" name="myForm">
+                              <div class="input-group d-xl-flex">
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text" onclick="afficherArticlesParRecherche()"><i class="fa fa-search"></i></span>
+                                  </div>
+                                  <input class="form-control" name="recherche" type="text" placeholder="I am looking for..">
+                              </div>
+                        </form>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- CONTENU -->
+        <div data-aos="fade-up" data-aos-duration="500" id="hero-botom">
+            <div class="container">
+                <div class="row">
+                    <div class="col" id="idAffichage">
+                        <h1 class="text-center">Page d'accueil</h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <div id="idFeatures" class="bounce animated features-boxed">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Features </h2>
+                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
+            </div>
+            <div class="row justify-content-center features">
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-newspaper-o icon"></i>
+                        <h3 class="name">News</h3>
+                        <p class="description">Toute l'actualité mondiale&nbsp;</p><a href="#" class="learn-more"></a></div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="fa fa-language icon"></i>
+                        <h3 class="name">Langues</h3>
+                        <p class="description">Plus de 10 langues disponibles</p><a href="#" class="learn-more"></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TEAM -->
+    <div data-aos="fade-up" id="idTeam" class="team-boxed">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Team </h2>
+                <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
+            </div>
+            <div class="row people">
+                <div class="col-md-6 col-lg-4 item">
+                    <div class="box"><img class="rounded-circle" src="img/4.jpg">
+                        <h3 class="name">Richard Boilley</h3>
+                        <p class="title">Developpeur</p>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
+                        <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 item">
+                    <div class="box"><img class="rounded-circle" src="img/5.jpg">
+                        <h3 class="name">Alexandre Lemoine</h3>
+                        <p class="title">Developpeur</p>
+                        <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id. Etiam dictum feugiat tellus, a semper massa. </p>
+                        <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-clean">
+        <footer>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Legacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Careers</h3>
+                        <ul>
+                            <li><a href="#">Job openings</a></li>
+                            <li><a href="#">Employee success</a></li>
+                            <li><a href="#">Benefits</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 item social">
+                      <a href="#"><i class="icon ion-social-facebook"></i></a>
+                      <a href="#"><i class="icon ion-social-twitter"></i></a>
+                      <a href="#"><i class="icon ion-social-instagram"></i></a>
+                      <p class="copyright">Company Name © 2017</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="client.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bs-animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.js"></script>
+</body>
+
+</html>
